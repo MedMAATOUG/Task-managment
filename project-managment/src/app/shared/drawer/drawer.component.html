@@ -1,0 +1,17 @@
+<div class="drawer" [style.width.px]="sidbarWidthValue()">
+  <a routerLink="admin">sidbarItems</a>
+  <p  *ngFor="let item of datasource" >
+    {{item.title}}
+  </p>
+  <button
+    (click)="toggelDrawer()"
+    *ngIf="sidbarMode === 'overwrite' && isDrawerOpen"
+  >
+    toggel
+  </button>
+</div>
+<div class="content" [style.left.px]="contentPosition()"   [style.width]="'calc(100% - ' + contentPosition() +'px)'"  #container>
+  <button (click)="toggelDrawer()">toggel</button>
+
+</div>
+

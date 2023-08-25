@@ -1,0 +1,7 @@
+<app-drawer [content]="content" [datasource]="navigationData"> </app-drawer>
+
+<!-- wrapp all content (right side) in this div -->
+<div #content>
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+</div>

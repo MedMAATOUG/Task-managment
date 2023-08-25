@@ -1,0 +1,17 @@
+.drawer {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 1;
+}
+.content {
+  position: absolute;
+  top: 0;
+  transition: 0.5s;
+  min-height: 100vh;
+  background-color: #f8f9fb;
+
+}
