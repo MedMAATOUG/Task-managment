@@ -9,7 +9,7 @@ export type drawerConfigues = [mode, width, minWidth]  ;
   providedIn: 'root'
 })
 export class DrawerService {
-  private  drawerConfigue: drawerConfigues = ['shrink', 300, 100];
+  private  drawerConfigue: drawerConfigues = ['shrink', 200, 55];
   private  _drawerConfig : BehaviorSubject<drawerConfigues> = new BehaviorSubject<drawerConfigues>(this.drawerConfigue)
   private $drawerConfig : Observable<drawerConfigues> = this._drawerConfig.asObservable(); 
   constructor() { 
@@ -20,37 +20,38 @@ export class DrawerService {
       {
         title: 'dashboard',
         url: '/dashboard',
-        icon: 'mediumiconslayout'
+        icon: 'fa-brands fa-windows'
+        
       },
       {
         title: 'projects',
         url: '/projects',
-        icon: 'description'
+        icon: 'fa-solid fa-layer-group'
       },
       {
         title: 'tasks',
         url: '/tasks',
-        icon: 'selectall'
+        icon: 'fa-solid fa-bars-progress'
       },
       {
         title: 'teams',
         url: '/teams',
-        icon: 'group'
+        icon: 'fa-regular fa-user'
       },
       {
         title: 'documentation',
-        url: '/document',
-        icon: 'inactivefolder'
+        url: '/doc',
+        icon: 'fa-solid fa-file'
       },
       {
         title: 'messages',
         url: '/messages',
-        icon: 'message'
+        icon: 'fa-brands fa-facebook-messenger'
       },
       {
         title: 'settings',
         url: '/settings',
-        icon: 'preference'
+        icon: 'fa-solid fa-gear'
       },
       
     ];

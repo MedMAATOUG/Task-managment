@@ -1,17 +1,30 @@
+
 <div class="drawer" [style.width.px]="sidbarWidthValue()">
-  <a routerLink="admin">sidbarItems</a>
-  <p  *ngFor="let item of datasource" >
-    {{item.title}}
-  </p>
-  <button
-    (click)="toggelDrawer()"
-    *ngIf="sidbarMode === 'overwrite' && isDrawerOpen"
-  >
-    toggel
-  </button>
-</div>
-<div class="content" [style.left.px]="contentPosition()"   [style.width]="'calc(100% - ' + contentPosition() +'px)'"  #container>
-  <button (click)="toggelDrawer()">toggel</button>
 
+  <div class="brand" [class.brand-drower-close]="!isDrawerOpen">
+    <img [src]="brandImage" >
+  </div>
+ 
+  <div class="nav-wrapper"  >
+    <div class="nav-item" *ngFor="let item of datasource">
+      <a fxLayout = 'row' fxLayoutGap="10px"
+        routerLink="{{ '/' + item.url }}"
+        routerLinkActive="router-link-active"
+      >
+       <i  fxFlex="35px" class="icon" [class]="item.icon" aria-hidden="true"></i>
+        <p>{{ item.title }}</p>
+      </a>
+    </div>
+  </div>
 </div>
+<div
 
+  class="content"
+  [style.left.px]="contentPosition()"
+  [style.width]="'calc(100% - ' + contentPosition() + 'px)'"
+  #container
+>
+<button  (click)="toggelDrawer()">
+  <i [class]="toggelBtnIcon"></i>
+</button>
+</div>

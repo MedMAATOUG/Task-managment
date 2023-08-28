@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+// generale
+@import './app/styles/color.scss' ;
+dark-bg {
+    background-color: $dark-bg ;
+}
