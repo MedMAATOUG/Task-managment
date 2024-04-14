@@ -1,0 +1,64 @@
+@import "../../styles/color.scss";
+@import "../../styles/common.scss";
+
+// --------------------------------general styles ------------------------------------------------
+.header {
+  height: 60px;
+  transition: 0.5s;
+  border-bottom: solid 1px #f1f1f1;
+}
+
+.btn-open-drawer{
+  display: none;
+  padding: 5px;
+  margin-right: 20px;
+  @extend .light-color-gray;
+}
+.search-section-wrapper {
+
+ 
+  position: relative;
+  i {
+    position: absolute;
+    left: 15px;
+  }
+  dx-text-box {
+    padding: 0 35px;
+    @extend .light-bg-clair;
+    transition: 0.5s;
+    border: none;
+  }
+}
+
+button {
+  background-color: transparent;
+}
+.icon {
+  @extend .light-color-gray;
+  @extend .icon-xl;
+}
+// ----------------------------------- dark and light mode style --------------------------------------
+.dark-mode {
+  .header {
+    @extend .border-dark;
+  }
+  .search-section-wrapper {
+    dx-text-box {
+      @extend .dark-bg-clair;
+      @extend .dark-color-wihit;
+    }
+    btn-open-drawer{
+      @extend .light-color-gray;
+    }
+  }
+  .light-mode {
+   
+  }
+}
+
+@media( max-width:672px ) {
+ 
+  .btn-open-drawer{
+    display: block !important;
+  }
+}

@@ -1,0 +1,56 @@
+@import "./color.scss";
+
+// -------------------------------icons --------------------------------
+
+.icon-xl {
+  font-size: 1.7em;
+}
+.icon-md {
+  font-size: 1.5rem;
+}
+.icon-xs {
+  font-size: 1.2rem !important;
+}
+
+//************************************light mode*************************************//
+// ---------------------------------background---------------------------------
+.light-bg {
+  background-color: $light-bg;
+}
+.light-bg-clair {
+  background-color: $light-bg-clair;
+}
+// ---------------------------------colors---------------------------------
+
+.light-color-gray {
+  color: $light-txt-gray;
+}
+.light-color-dark {
+  color: $light-txt-dark;
+}
+// -------------------------------borders --------------------------------
+.border-light {
+  border-color: $light-gray;
+}
+
+//************************************Dark mode*************************************//
+// ---------------------------------background---------------------------------
+.dark-bg {
+  background-color: $dark-bg;
+}
+.dark-bg-clair {
+  background-color: $dark-bg-clair;
+}
+
+// ---------------------------------colors---------------------------------
+.dark-color-gray {
+  color: $dark-txt-gray;
+}
+.dark-color-wihit {
+  color: $dark-txt-wihte;
+}
+
+// -------------------------------borders --------------------------------
+.border-dark {
+  border-color: $dark-gray !important;
+}

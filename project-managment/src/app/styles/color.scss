@@ -1,15 +1,27 @@
-// background-color 
-$dark-bg : #141414;
-$light-bg : #f8f8f8;
+// **************************** dark mode ********************************//
+// ************************?background-color****************************//
+$dark-bg: #141414;
+$dark-bg-clair: #202020;
 
-$blue-primary : #193755;
-$blue-sky : 06d8f3;
-$gray : #afafaf;
-$light-gray : #f1f1f1 ;
+$dark-gray: #1a1a1a;    //it used for border in dark mode
 
-$blue-light : #e7f2ff;
-$white : #ffff;
+// *****************************?-color****************************//
 
-// text-color
-$mutel-gray : #a1a1a1;
-$focus-gray : #585858
+$dark-txt-wihte: #dfdfdf;  //it used for headers in Dark mode
+$dark-txt-gray: #484848;   //it for headers in light mode
+
+// **************************** light mode ********************************//
+// ************************?background-color****************************//
+$light-bg: #f8f8f8;
+$light-bg-clair: #ececec;
+
+$light-gray: #f1f1f1;  //it used for border in light mode
+
+// *****************************?-color****************************//
+
+$light-txt-gray: #b7b7b7; //it used for headers in Dark mode
+$light-txt-dark: #5f5f5f; //it for headers in light mode
+
+
+// **************************** common ********************************//
+$violet: #7f6df5;

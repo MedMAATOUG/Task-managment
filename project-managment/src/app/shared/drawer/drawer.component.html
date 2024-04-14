@@ -1,30 +1,43 @@
-
-<div class="drawer" [style.width.px]="sidbarWidthValue()">
-
-  <div class="brand" [class.brand-drower-close]="!isDrawerOpen">
-    <img [src]="brandImage" >
-  </div>
- 
-  <div class="nav-wrapper"  >
-    <div class="nav-item" *ngFor="let item of datasource">
-      <a fxLayout = 'row' fxLayoutGap="10px"
-        routerLink="{{ '/' + item.url }}"
-        routerLinkActive="router-link-active"
-      >
-       <i  fxFlex="35px" class="icon" [class]="item.icon" aria-hidden="true"></i>
-        <p>{{ item.title }}</p>
-      </a>
+<div [ngClass]="{'dark-mode' : isDarkMode , 'light-mode' : !isDarkMode}">
+  <div
+    class="drawer" 
+    [style.width.px]="sidbarWidthValue()"
+    #drawer
+  >
+    <div class="brand" [class.brand-drower-close]="!isDrawerOpen">
+      <img [src]="brandImage" />
+    </div>
+  
+    <div class="nav-wrapper" style="position: relative">
+      <div class="nav-item" *ngFor="let item of datasource">
+        <a
+          fxLayout="row"
+          fxLayoutGap="10px"
+          [routerLink]="[ item.url]"
+          routerLinkActive="nav-light-active "
+        >
+          <i
+            fxFlex="30px"
+            class="icon"
+            [class]="item.icon"
+            aria-hidden="true"
+          ></i>
+          <p>{{ item.title }}</p>
+        </a>
+      </div>
     </div>
   </div>
-</div>
-<div
-
-  class="content"
-  [style.left.px]="contentPosition()"
-  [style.width]="'calc(100% - ' + contentPosition() + 'px)'"
-  #container
->
-<button  (click)="toggelDrawer()">
-  <i [class]="toggelBtnIcon"></i>
-</button>
+  <div
+    class="content"
+    (click)="onClick($event)"
+    [style.left.px]="contentPosition()"
+    [style.width]="'calc(100% - ' + contentPosition() + 'px)'"
+    [class.dark-bg]="isDarkMode"
+    #container
+  >
+    <button class="btn-toggle-drawer" (click)="toggelDrawer()">
+      <i [class]="toggelBtnIcon"></i>
+    </button>
+  </div>
+  
 </div>

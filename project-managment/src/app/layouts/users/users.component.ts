@@ -6,9 +6,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Observable, Subject, map, takeUntil } from 'rxjs';
-import { NavItem } from 'src/app/models/nav-item';
-import { DrawerService } from 'src/app/services/drawer.service';
+import { DrawerService } from 'src/app/shared/drawer/drawer.service';
 import { DrawerComponent } from 'src/app/shared/drawer/drawer.component';
+import { Navigation } from 'src/app/models/navigation';
 
 @Component({
   selector: 'app-users',
@@ -18,20 +18,23 @@ import { DrawerComponent } from 'src/app/shared/drawer/drawer.component';
 export class UsersComponent {
   @ViewChild('content', { read: ElementRef }) content!: ElementRef;
   @ViewChild(DrawerComponent) drawer!: DrawerComponent;
-  public navigationData!: NavItem[];
+  public navigationData!: Navigation[];
   private $destroy: Subject<void> = new Subject<void>();
   constructor(private drawerService: DrawerService) {
     this.getNavigationData().subscribe();
-    console.log('dataNavigation :' , this.navigationData)
+    console.log('dataNavigation :', this.navigationData);
   }
 
-  private getNavigationData(): Observable<NavItem[]> {
+  private getNavigationData(): Observable<Navigation[]> {
     return this.drawerService.getNavigationData().pipe(
       takeUntil(this.$destroy),
-      map((navData: NavItem[]) => (this.navigationData = navData))
+      map((navData: Navigation[]) => (this.navigationData = navData))
     );
   }
 
+  public openDrawerFromHeader() : void {
+    this.drawer.openDrawer()
+  }
   ngDestroy() {
     this.$destroy.next();
     this.$destroy.complete();

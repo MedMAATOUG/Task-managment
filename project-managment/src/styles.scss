@@ -1,6 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 // generale
 @import './app/styles/color.scss' ;
-dark-bg {
-    background-color: $dark-bg ;
+.dark-bg {
+    background-color: $dark-bg !important ;
 }
+.light-bg{
+    background-color: $light-bg !important;
+}
+
+.border{
+    border : solid 2px $light-gray !important ;
+}
+.border-light{
+    border-color: $light-gray;
+}
+.border-dark{
+    border-color: $dark-gray;
+}
+
+
+.pd-15{
+    padding: 15px !important;
+}
+

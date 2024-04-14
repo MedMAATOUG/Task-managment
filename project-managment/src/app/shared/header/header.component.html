@@ -1,1 +1,43 @@
-<p>header works!</p>
+<div [ngClass]="{ 'dark-mode': isDarkMode, 'light-mode': !isDarkMode }">
+  <div class="header pd-15">
+    <button class="btn-open-drawer" (click)="openDrawer()">
+      <span class="fa-solid fa-bars"></span>
+    </button>
+    <div
+      class="search-section-wrapper"
+      fxFlex="90"
+      fxLayout="row"
+      fxLayoutAlign="start center"
+    >
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <dx-text-box
+        placeholder="Search"
+        width="50%"
+        [inputAttr]="{ 'aria-label': 'Name' }"
+      >
+        <i class="icon fa-regular fa-bell"></i>
+      </dx-text-box>
+    </div>
+    <div
+      class="notif-section-wrapper"
+      fxFlex="10"
+      fxLayout="row"
+      fxLayoutGap="20"
+    >
+      <button (click)="toggelMode()">
+        <i class="icon" [class]="toggelModeBtnIcon()"></i>
+      </button>
+      <div class="notification">
+        <button>
+          <i class="icon fa-regular fa-bell"></i>
+        </button>
+      </div>
+      <div class="avatar">
+        <button>
+          <i class="icon fa fa-user-tie"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
